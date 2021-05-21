@@ -1,0 +1,1528 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TaskService</name>
+    </assembly>
+    <members>
+        <member name="T:TaskService.ActionTimeAttribute">
+            <summary>
+            方法时间过滤器
+            </summary>
+        </member>
+        <member name="M:TaskService.ActionTimeAttribute.OnActionExecutingAsync(System.Web.Http.Controllers.HttpActionContext,System.Threading.CancellationToken)">
+            <summary>
+            启动计时器
+            </summary>
+            <param name="actionContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ActionTimeAttribute.OnActionExecutedAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            记录监控接口执行日志
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.CommonErrorCode">
+            <summary>
+            错误代码
+            </summary>
+        </member>
+        <member name="F:TaskService.CommonErrorCode.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:TaskService.CommonErrorCode.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:TaskService.CommonErrorCode.UnkownError">
+            <summary>
+            未知错误
+            </summary>
+        </member>
+        <member name="T:TaskService.BiliApiResponse`1">
+            <summary>
+            Bili接口响应
+            </summary>
+        </member>
+        <member name="P:TaskService.BiliApiResponse`1.code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:TaskService.BiliApiResponse`1.message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:TaskService.BiliApiResponse`1.ttl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BiliApiResponse`1.data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:TaskService.UserInfo">
+            <summary>
+            登录信息
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.isLogin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.email_verified">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.face">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.level_info">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.mid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.mobile_verified">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.money">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.moral">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.official">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.officialVerify">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.pendant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.scores">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.uname">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vipDueDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vipStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vipType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vip_pay_type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vip_theme_type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vip_label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vip_avatar_subscript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.vip_nickname_color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.wallet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.has_shop">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.shop_url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.allowance_count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.UserInfo.answer_status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.LevelInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.LevelInfo.current_level">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.LevelInfo.current_min">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.LevelInfo.current_exp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.LevelInfo.next_exp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.Official">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Official.role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Official.title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Official.desc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Official.type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.OfficialVerify">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.OfficialVerify.type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.OfficialVerify.desc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.Pendant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Pendant.pid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Pendant.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Pendant.image">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Pendant.expire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Pendant.image_enhance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Pendant.image_enhance_frame">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.VipLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.VipLabel.path">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.VipLabel.text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.VipLabel.label_theme">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.Wallet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Wallet.mid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Wallet.bcoin_balance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Wallet.coupon_balance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.Wallet.coupon_due_time">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.DailyTaskInfo">
+            <summary>
+            任务信息
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Login">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Watch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Coins">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Share">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Tel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Safe_question">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.DailyTaskInfo.Identify_card">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.BilibiliClient">
+            <summary>
+            哔哩哔哩客户端
+            </summary>
+        </member>
+        <member name="F:TaskService.BilibiliClient.UserAgent">
+            <summary>
+            UserAgent
+            </summary>
+        </member>
+        <member name="F:TaskService.BilibiliClient.Cookie">
+            <summary>
+            Cookie
+            </summary>
+        </member>
+        <member name="M:TaskService.BilibiliClient.SignInTask">
+            <summary>
+            签到任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BilibiliClient.Login">
+            <summary>
+            登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BilibiliClient.TaskReward">
+            <summary>
+            获取每日任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.BaseClientHelper">
+            <summary>
+            项目http请求操作类，已转换成BaseResponse类
+            </summary>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.#ctor(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+            <param name="timeOut">用于此客户端实例发出的请求的超时时间（以毫秒为单位） </param>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.#ctor(System.Uri)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.#ctor(System.Uri,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+            <param name="timeOut">用于此客户端实例发出的请求的超时时间（以毫秒为单位） </param>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecuteSingle``1(System.String,RestSharp.Method,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecuteGetSingle``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecutePostSingle``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecutePutSingle``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecuteDeleteSingle``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecuteList``1(System.String,RestSharp.Method,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecuteGetList``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecutePostList``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecutePutList``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.BaseClientHelper.ExecuteDeleteList``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.BaseResponseList`1">
+            <summary>
+            返回类型，对象集合
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TaskService.BaseResponseList`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.IsOK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.ErrorCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.MessageParams">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.Results">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseList`1.Total">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.ClientHelper">
+            <summary>
+            Http请求操作类
+            </summary>
+        </member>
+        <member name="P:TaskService.ClientHelper.Client">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.ClientHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.ClientHelper.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+        </member>
+        <member name="M:TaskService.ClientHelper.#ctor(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+            <param name="timeOut"></param>
+        </member>
+        <member name="M:TaskService.ClientHelper.#ctor(System.Uri)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+        </member>
+        <member name="M:TaskService.ClientHelper.#ctor(System.Uri,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+            <param name="timeOut"></param>
+        </member>
+        <member name="M:TaskService.ClientHelper.Execute(RestSharp.IRestRequest)">
+            <summary>
+            执行
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.Execute``1(RestSharp.IRestRequest)">
+            <summary>
+            执行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteAsync(RestSharp.IRestRequest,System.Action{RestSharp.IRestResponse,RestSharp.RestRequestAsyncHandle})">
+            <summary>
+            异步执行
+            </summary>
+            <param name="request"></param>
+            <param name="callback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteAsync``1(RestSharp.IRestRequest,System.Action{RestSharp.IRestResponse{``0},RestSharp.RestRequestAsyncHandle})">
+            <summary>
+            异步执行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request"></param>
+            <param name="callback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.Execute(System.String,RestSharp.Method,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="method"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteGet(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePost(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePut(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteDelete(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.Execute``1(System.String,RestSharp.Method,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="method"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteGet``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePost``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePut``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteDelete``1(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteAsync(System.String,RestSharp.Method,System.Action{RestSharp.IRestResponse,RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="method"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteGetAsync(System.String,System.Action{RestSharp.IRestResponse,RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePostAsync(System.String,System.Action{RestSharp.IRestResponse,RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePutAsync(System.String,System.Action{RestSharp.IRestResponse,RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteDeleteAsync(System.String,System.Action{RestSharp.IRestResponse,RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteAsync``1(System.String,RestSharp.Method,System.Action{RestSharp.IRestResponse{``0},RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="method"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteGetAsync``1(System.String,System.Action{RestSharp.IRestResponse{``0},RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePostAsync``1(System.String,System.Action{RestSharp.IRestResponse{``0},RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecutePutAsync``1(System.String,System.Action{RestSharp.IRestResponse{``0},RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.ExecuteDeleteAsync``1(System.String,System.Action{RestSharp.IRestResponse{``0},RestSharp.RestRequestAsyncHandle},System.Object,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resource"></param>
+            <param name="callback"></param>
+            <param name="paramObj"></param>
+            <param name="headerObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.ClientHelper.RestRequestWithParam(RestSharp.IRestRequest,RestSharp.Method,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="method"></param>
+            <param name="paramObj"></param>
+        </member>
+        <member name="M:TaskService.ClientHelper.RestRequestWithHeader(RestSharp.IRestRequest,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="headerObj"></param>
+        </member>
+        <member name="T:TaskService.NewtonsoftJsonSerializer">
+            <summary>
+            使用Newtonsoft.Json序列化
+            </summary>
+        </member>
+        <member name="P:TaskService.NewtonsoftJsonSerializer.DateFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.NewtonsoftJsonSerializer.RootElement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.NewtonsoftJsonSerializer.Namespace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.NewtonsoftJsonSerializer.ContentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.NewtonsoftJsonSerializer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.NewtonsoftJsonSerializer.Serialize(System.Object)">
+            <summary>
+            序列化
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.PropertyParameterHandle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.PropertyParameterHandle.HandleNormal(System.String,System.Object)">
+            <summary>
+            Handle Normal type info,to key/value
+            </summary>
+            <param name="keyName"></param>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.PropertyParameterHandle.HandleArray(System.String,System.Type,System.Object)">
+            <summary>
+            Handle Array type info,to key/value
+            </summary>
+            <param name="keyName"></param>
+            <param name="arrayType"></param>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.PropertyParameterHandle.HandleList(System.String,System.Type,System.Object)">
+            <summary>
+            Handle Listt Type info,to key/value
+            </summary>
+            <param name="keyName"></param>
+            <param name="listType"></param>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.PropertyParameterHandle.HandleClass(System.String,System.Type,System.Object)">
+            <summary>
+            Handle Class Type info,to Key/Value
+            </summary>
+            <param name="keyName"></param>
+            <param name="classType"></param>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.PropertyParameterKeyValue">
+            <summary>
+            Key/Value propertites
+            </summary>
+        </member>
+        <member name="P:TaskService.PropertyParameterKeyValue.Key">
+            <summary>
+            Key
+            </summary>
+        </member>
+        <member name="P:TaskService.PropertyParameterKeyValue.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="T:TaskService.RestRequestExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.RestRequestExtensions.#ctor(System.String,RestSharp.Method,RestSharp.Serializers.ISerializer)">
+            <summary>
+            使用自定义的JSON序列化类
+            </summary>
+            <param name="url">url</param>
+            <param name="method">方法</param>
+            <param name="jsonSerializer">JSON序列化类</param>
+        </member>
+        <member name="T:TaskService.RestSharpExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.RestSharpExtensions.AddGetObject(RestSharp.IRestRequest,System.Object,System.String[])">
+            <summary>
+            Calls AddParameter() for all public, readable properties specified in the includedProperties list
+            </summary>
+            <example>
+            request.AddObject(product, "ProductId", "Price", ...);
+            </example>
+            <param name="restRequest"></param>
+            <param name="obj">The object with properties to add as parameters</param>
+            <param name="includedProperties">The names of the properties to include</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:TaskService.RestSharpExtensions.AddGetObject(RestSharp.IRestRequest,System.Object)">
+            <summary>
+            Calls AddParameter() for all public, readable properties of obj
+            </summary>
+            <param name="restRequest"></param>
+            <param name="obj">The object with properties to add as parameters</param>
+            <returns>This request</returns>
+        </member>
+        <member name="T:TaskService.ServiceStackToJson">
+            <summary>
+            使用ServiceStack序列化
+            </summary>
+        </member>
+        <member name="P:TaskService.ServiceStackToJson.DateFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.ServiceStackToJson.RootElement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.ServiceStackToJson.Namespace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.ServiceStackToJson.ContentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.ServiceStackToJson.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.ServiceStackToJson.Serialize(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.ActionLogAttribute">
+            <summary>
+            方法日志过滤器
+            </summary>
+        </member>
+        <member name="M:TaskService.ActionLogAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:TaskService.ActionLogAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+        <member name="T:TaskService.BaseResponse`1">
+            <summary>
+            返回类型，单个对象
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TaskService.BaseResponse`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponse`1.IsOK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponse`1.ErrorCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponse`1.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponse`1.MessageParams">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponse`1.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponse`1.Results">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.BaseResponseError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.BaseResponseError.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseError.ErrorCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseError.FieldName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseError.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseError.Meta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.BaseResponseStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.BaseResponseStatus.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseStatus.ErrorCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseStatus.StackTrace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseStatus.Meta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.BaseResponseStatus.Errors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.Bootstrap">
+            <summary>
+            引导程序
+            </summary>
+        </member>
+        <member name="P:TaskService.Bootstrap.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="M:TaskService.Bootstrap.Start(Topshelf.HostControl)">
+            <summary>
+            启动
+            </summary>
+            <param name="hostControl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.Bootstrap.Stop(Topshelf.HostControl)">
+            <summary>
+            停止
+            </summary>
+            <param name="hostControl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.GlobalExceptionAttribute">
+            <summary>
+            全局异常过滤器
+            </summary>
+        </member>
+        <member name="M:TaskService.GlobalExceptionAttribute.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+        <member name="M:TaskService.GlobalExceptionAttribute.OnExceptionAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.HangfireExtensions">
+            <summary>
+            Hangfire扩展
+            </summary>
+        </member>
+        <member name="M:TaskService.HangfireExtensions.UseOwin(Topshelf.HostConfigurators.HostConfigurator,System.String)">
+            <summary>
+            使用OWIN
+            </summary>
+            <param name="configurator"></param>
+            <param name="baseAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.HangfireExtensions.UseStorage``1(Owin.IAppBuilder,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TStorage"></typeparam>
+            <param name="app"></param>
+            <param name="storage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.HangfireExtensions.UseDashboardMetric(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.HangfireExtensions.UseHangfireFilters(Owin.IAppBuilder,Hangfire.Common.JobFilterAttribute[])">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.IBaseResponse">
+            <summary>
+            返回结果基类接口
+            </summary>
+        </member>
+        <member name="P:TaskService.IBaseResponse.IsOK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.IBaseResponse.ErrorCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.IBaseResponse.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.IBaseResponse.MessageParams">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TaskService.IBaseResponse.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TaskService.LogHelper">
+            <summary>
+            日志 帮助类
+            </summary>
+        </member>
+        <member name="M:TaskService.LogHelper.Error(System.String)">
+            <summary>
+            记录错误日志
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Error(System.String,System.Exception)">
+            <summary>
+            记录错误日志
+            </summary>
+            <param name="Message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Info(System.String)">
+            <summary>
+            记录信息日志
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Info(System.String,System.Exception)">
+            <summary>
+            记录信息日志
+            </summary>
+            <param name="Message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Warn(System.String)">
+            <summary>
+            记录警告日志 
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Warn(System.String,System.Exception)">
+            <summary>
+            记录警告日志
+            </summary>
+            <param name="Message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Debug(System.String)">
+            <summary>
+            记录调试日志 
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:TaskService.LogHelper.Debug(System.String,System.Exception)">
+            <summary>
+            记录调试日志
+            </summary>
+            <param name="Message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:TaskService.Controllers.BilibiliController">
+            <summary>
+            哔哩哔哩 控制器
+            </summary>
+        </member>
+        <member name="M:TaskService.Controllers.BilibiliController.CreateSignInJob">
+            <summary>
+            创建签到任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.Controllers.BilibiliController.ExecSignInJob">
+            <summary>
+            执行签到任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.Controllers.HomeController">
+            <summary>
+            Home 控制器
+            </summary>
+        </member>
+        <member name="M:TaskService.Controllers.HomeController.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.Controllers.TestController">
+            <summary>
+            测试 控制器
+            </summary>
+        </member>
+        <member name="M:TaskService.Controllers.TestController.CreateSimpleJob">
+            <summary>
+            创建简单任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.Controllers.ValuesController">
+            <summary>
+            Values 控制器
+            </summary>
+        </member>
+        <member name="M:TaskService.Controllers.ValuesController.Get">
+            <summary>
+            GET
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            GET
+            </summary>
+            <param name="id">ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskService.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            POST
+            </summary>
+            <param name="value">Value</param>
+        </member>
+        <member name="M:TaskService.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            PUT
+            </summary>
+            <param name="id">ID</param>
+            <param name="value">Value</param>
+        </member>
+        <member name="M:TaskService.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            DELETE
+            </summary>
+            <param name="id">ID</param>
+        </member>
+        <member name="T:TaskService.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TaskService.Program.baseAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:TaskService.RecurringJobService">
+            <summary>
+            定时任务执行
+            </summary>
+        </member>
+        <member name="M:TaskService.RecurringJobService.SimpleJob(Hangfire.Server.PerformContext)">
+            <summary>
+            简单任务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:TaskService.RecurringJobService.SignInJob(Hangfire.Server.PerformContext)">
+            <summary>
+            签到任务
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskService.ResultModel`1">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="M:TaskService.ResultModel`1.#ctor">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="M:TaskService.ResultModel`1.#ctor(System.Boolean,System.String,`0)">
+            <summary>
+            结果
+            </summary>
+            <param name="IsOK">是否成功</param>
+            <param name="Message">信息</param>
+            <param name="Result">结果</param>
+        </member>
+        <member name="M:TaskService.ResultModel`1.#ctor(System.Boolean,System.String,System.String,`0)">
+            <summary>
+            结果
+            </summary>
+            <param name="IsOK">是否成功</param>
+            <param name="ErrorCode">错误编码</param>
+            <param name="Message">信息</param>
+            <param name="Result">结果</param>
+        </member>
+        <member name="P:TaskService.ResultModel`1.IsOK">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:TaskService.ResultModel`1.ErrorCode">
+            <summary>
+            错误编码
+            </summary>
+        </member>
+        <member name="P:TaskService.ResultModel`1.Message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:TaskService.ResultModel`1.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="T:TaskService.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TaskService.Startup.Configuration(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+    </members>
+</doc>
