@@ -1,3 +1,0 @@
-记录时间：[2021-03-09 16:22:51,391] 线程ID：[45] 日志级别：INFO  日志描述：Bilibili/ExecSignInJob 进入执行：{}
-记录时间：[2021-03-09 16:23:19,182] 线程ID：[45] 日志级别：INFO  日志描述：Bilibili/ExecSignInJob 执行成功退出：{}
-记录时间：[2021-03-09 16:23:19,184] 线程ID：[45] 日志级别：INFO  日志描述：Bilibili/ExecSignInJob 响应：{"IsOK":true,"ErrorCode":"C0001","Message":"成功","MessageParams":null,"Status":{"ErrorCode":null,"StackTrace":null,"Meta":{},"Errors":[]},"Results":true}

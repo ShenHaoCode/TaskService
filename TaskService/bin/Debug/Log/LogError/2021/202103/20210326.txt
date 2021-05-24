@@ -1,4 +1,0 @@
-记录时间：[2021-03-26 09:00:15,684] 线程ID：[12] 日志级别：ERROR 日志描述：获取登录信息错误
-System.Net.WebException: 远程服务器返回错误: (412) Precondition Failed。
-   在 System.Net.HttpWebRequest.GetResponse()
-   在 TaskService.BilibiliClient.TaskReward() 位置 H:\Repository\TaskService\TaskService\Common\ThirdParty\BilibiliClient.cs:行号 87

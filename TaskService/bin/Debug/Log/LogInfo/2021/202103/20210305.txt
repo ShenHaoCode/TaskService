@@ -1,6 +1,0 @@
-记录时间：[2021-03-05 14:29:49,388] 线程ID：[44] 日志级别：INFO  日志描述：Bilibili/CreateSignInJob 进入执行：{}
-记录时间：[2021-03-05 14:29:49,916] 线程ID：[44] 日志级别：INFO  日志描述：Bilibili/CreateSignInJob 执行成功退出：{}
-记录时间：[2021-03-05 14:29:49,931] 线程ID：[44] 日志级别：INFO  日志描述：Bilibili/CreateSignInJob 响应：{"IsOK":true,"ErrorCode":"C0001","Message":"成功","MessageParams":null,"Status":{"ErrorCode":null,"StackTrace":null,"Meta":{},"Errors":[]},"Results":false}
-记录时间：[2021-03-05 14:29:53,552] 线程ID：[45] 日志级别：INFO  日志描述：Test/CreateSimpleJob 进入执行：{}
-记录时间：[2021-03-05 14:29:53,918] 线程ID：[45] 日志级别：INFO  日志描述：Test/CreateSimpleJob 执行成功退出：{}
-记录时间：[2021-03-05 14:29:53,919] 线程ID：[45] 日志级别：INFO  日志描述：Test/CreateSimpleJob 响应：{"IsOK":true,"ErrorCode":"C0001","Message":"成功","MessageParams":null,"Status":{"ErrorCode":null,"StackTrace":null,"Meta":{},"Errors":[]},"Results":false}

@@ -1,6 +1,0 @@
-记录时间：[2021-02-04 15:35:35,045] 线程ID：[15] 日志级别：INFO  日志描述：Bilibili/CreateDailyJob 进入执行：{}
-记录时间：[2021-02-04 15:35:35,699] 线程ID：[15] 日志级别：INFO  日志描述：Bilibili/CreateDailyJob 成功退出执行：{}
-记录时间：[2021-02-04 15:35:35,701] 线程ID：[15] 日志级别：INFO  日志描述：Bilibili/CreateDailyJob 响应：{"IsOK":true,"ErrorCode":"C0001","Message":"成功","MessageParams":null,"Status":{"ErrorCode":null,"StackTrace":null,"Meta":{},"Errors":[]},"Results":false}
-记录时间：[2021-02-04 15:35:43,737] 线程ID：[47] 日志级别：INFO  日志描述：Test/CreateSimpleJob 进入执行：{}
-记录时间：[2021-02-04 15:35:44,298] 线程ID：[47] 日志级别：INFO  日志描述：Test/CreateSimpleJob 成功退出执行：{}
-记录时间：[2021-02-04 15:35:44,298] 线程ID：[47] 日志级别：INFO  日志描述：Test/CreateSimpleJob 响应：{"IsOK":true,"ErrorCode":"C0001","Message":"成功","MessageParams":null,"Status":{"ErrorCode":null,"StackTrace":null,"Meta":{},"Errors":[]},"Results":false}
