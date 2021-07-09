@@ -32,13 +32,17 @@ namespace TaskService
 
                 #region 打印信息
                 _logger.Info("任务服务启动中...");
-                _logger.Info(string.Format("控制台：{0}/Hangfire", Address));
-                _logger.Info(string.Format("WebAPI：{0}/swagger/ui/index", Address));
+                _logger.Info(string.Format("主页：{0}", Address));
+
+                //_logger.Info(string.Format("控制台：{0}/Hangfire", Address));
+                //_logger.Info(string.Format("WebAPI：{0}/swagger/ui/index", Address));
                 #endregion
-                
+
 #if DEBUG
-                Process.Start($@"{Address}/Hangfire");
-                Process.Start($@"{Address}/swagger/ui/index");
+                Process.Start($@"{Address}");
+
+                //Process.Start($@"{Address}/Hangfire");
+                //Process.Start($@"{Address}/swagger/ui/index");
 #endif
 
                 return true;

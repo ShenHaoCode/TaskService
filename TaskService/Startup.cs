@@ -7,6 +7,8 @@ using System.Net.Http.Formatting;
 using Hangfire;
 using Hangfire.SqlServer;
 using Hangfire.Console;
+using Microsoft.Owin.StaticFiles;
+using Microsoft.Owin.FileSystems;
 
 [assembly: OwinStartup(typeof(TaskService.Startup))]
 
@@ -24,7 +26,14 @@ namespace TaskService
         public void Configuration(IAppBuilder app)
         {
             // 有关如何配置应用程序的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=316888
-            app.UseWelcomePage("/");
+            #region Page
+            var fileSystem = new PhysicalFileSystem(@".\Web"); //静态网站根目录
+            var options = new FileServerOptions { EnableDefaultFiles = true, FileSystem = fileSystem };
+            options.StaticFileOptions.FileSystem = fileSystem;
+            options.StaticFileOptions.ServeUnknownFileTypes = true;
+            options.DefaultFilesOptions.DefaultFileNames = new[] { "Index.html" }; //默认页面(填写与静态网站根目录的相对路径)
+            app.UseFileServer(options);
+            #endregion
 
             #region Web API
             HttpConfiguration config = new HttpConfiguration();
