@@ -19,7 +19,7 @@ namespace TaskService
         /// <summary>
         /// Cookie
         /// </summary>
-        public const string Cookie = "_uuid=598E0EEE-8F03-8543-BBA2-CD445DA17E2973131infoc; buvid3=953749EE-3B3D-43E6-A0A7-9644BDD5624553920infoc; sid=54oawjqi; stardustvideo=1; LIVE_BUVID=AUTO3715776353235143; rpdid=|(J|)YYYkYJk0J'ul~~YJlJJ); blackside_state=1; CURRENT_FNVAL=80; DedeUserID=330500587; DedeUserID__ckMd5=e88b37dd8f3741c0; SESSDATA=8f648384%2C1618759881%2Cfe441*a1; bili_jct=eec2481d1146b88bad04335e6b802f85; PVID=1; bp_t_offset_330500587=466799663029748234; fingerprint3=84457829a1f5442a01efdadc42095871; fingerprint=9bddf90bdccc79f15795cc9d12c805b4; buivd_fp=953749EE-3B3D-43E6-A0A7-9644BDD5624553920infoc; buvid_fp_plain=953749EE-3B3D-43E6-A0A7-9644BDD5624553920infoc; fingerprint_s=2f9e72c7bc2bae6adb288139b586b2b1; bp_video_offset_330500587=470429842403918208; bfe_id=61a513175dc1ae8854a560f6b82b37af";
+        public const string Cookie = "";
 
         /// <summary>
         /// 签到任务
